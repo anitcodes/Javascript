@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Register Form</h2>
+
+  <form id="myForm">
+    <label>Name:</label>
+    <input type="text" id="name" />
+    <div class="error" id="nameError"></div>
+
+    <label>Email:</label>
+    <input type="text" id="email" />
+    <div class="error" id="emailError"></div>
+
+    <label>Password:</label>
+    <input type="password" id="password" />
+    <div class="error" id="passwordError"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent form from submitting
+
+      // Get values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Reset error messages
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+
+      let valid = true;
+
+      // Name validation
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required.";
+        valid = false;
+      }
+
+      // Email validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        document.getElementById("emailError").textContent = "Invalid email address.";
+        valid = false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters.";
+        valid = false;
+      }
+
+      // If valid, submit or show success
+      if (valid) {
+        alert("Form submitted successfully!");
+        // Optionally: send data to server here
+      }
+    });
+  </script>
+
+</body>
+</html>

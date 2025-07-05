@@ -1,0 +1,159 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debounce Search Input</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+      background: #f0f0f0;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Debounced Search</h2>
+  <input type="text" id="searchInput" placeholder="Start typing...">
+  <div id="output"></div>
+
+  <script>
+    const input = document.getElementById("searchInput");
+    const output = document.getElementById("output");
+    let debounceTimer;
+
+    function debounce(func, delay) {
+      return function (...args) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+
+    function handleSearch(event) {
+      const value = event.target.value;
+      output.textContent = `You searched for: "${value}"`;
+      console.log("Logged:", value);
+    }
+
+    input.addEventListener("input", debounce(handleSearch, 500));
+  </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Search with Debounce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+      background: #f0f0f0;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    #results {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .result-item {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .result-item strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Live User Search (Debounced)</h2>
+  <input type="text" id="searchInput" placeholder="Search users by name...">
+  <div id="results"></div>
+
+  <script>
+    const input = document.getElementById("searchInput");
+    const resultsContainer = document.getElementById("results");
+
+    let debounceTimer;
+
+    function debounce(func, delay) {
+      return function (...args) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+
+    async function fetchAndFilterUsers(query) {
+      if (!query.trim()) {
+        resultsContainer.innerHTML = ""; // clear on empty
+        return;
+      }
+
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+        const users = await res.json();
+        const filtered = users.filter(user =>
+          user.name.toLowerCase().includes(query.toLowerCase())
+        );
+
+        displayResults(filtered);
+      } catch (error) {
+        resultsContainer.innerHTML = `<p style="color:red;">Failed to fetch users.</p>`;
+      }
+    }
+
+    function displayResults(users) {
+      if (users.length === 0) {
+        resultsContainer.innerHTML = `<p>No users found.</p>`;
+        return;
+      }
+
+      resultsContainer.innerHTML = users.map(user => `
+        <div class="result-item">
+          <strong>${user.name}</strong>
+          Email: ${user.email}<br>
+          City: ${user.address.city}<br>
+          Phone: ${user.phone}
+        </div>
+      `).join("");
+    }
+
+    input.addEventListener("input", debounce((e) => {
+      fetchAndFilterUsers(e.target.value);
+    }, 500));
+  </script>
+
+</body>
+</html>
