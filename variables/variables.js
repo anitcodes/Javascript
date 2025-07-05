@@ -60,3 +60,11 @@ let NRP = USD*rate;
 console.log(`USD ${USD} = NRP ${NRP.toFixed(2)}`);// toFixed(2) gives 2 decimal points
 */
 
+// 6.Salary with Bonus
+// Create a program that calculates the total salary after a 10% bonus.
+/*
+let baseSalary = 20000;
+let bonus = baseSalary * 0.10;
+let finalSalary = baseSalary + bonus;
+console.log("Total Salary = " +  finalSalary);
+*/
