@@ -120,7 +120,6 @@ if (password === null || password.trim() === "") {
 
 * Ask for marks in Math and Science.
 * If both are above 60, show "Eligible for Science course", else "Try again".
-*/
 
 let mathMarks = prompt("Enter your marks of Math");
 let scienceMarks = prompt("Enter your marks of Science");
@@ -133,11 +132,79 @@ if (
   alert("Please enter valid numeric marks!");
 } else {
   let marksInMath = Number(mathMarks);
-  let marksInScience = Number(scienceMarks);
+let marksInScience = Number(scienceMarks);
 
-  if (marksInMath >= 60 && marksInScience >= 60) {
-    alert("You are eligible for the Science course");
-  } else {
-    alert("You are not eligible for the Science course");
+if (marksInMath >= 60 && marksInScience >= 60) {
+  alert("You are eligible for the Science course");
+} else {
+  alert("You are not eligible for the Science course");
+}
+}
+*/
+
+//To Do List
+/*
+let todoList = [];
+
+while (true) {
+  let choice = prompt(
+    "📋 To-Do List Menu:\n1. Add Task\n2. Delete Task\n3. View Tasks\n4. Exit\n\nEnter your choice (1-4):"
+  );
+
+  switch (choice) {
+    case "1":
+      let newTask = prompt("Enter the task you want to add:");
+      if (newTask && newTask.trim() !== "") {
+        todoList.push(newTask.trim());
+        alert(`✅ Task added: "${newTask}"`);
+      } else {
+        alert("⚠️ Task cannot be empty!");
+      }
+      break;
+
+    case "2":
+      if (todoList.length === 0) {
+        alert("❌ No tasks to delete.");
+        break;
+      }
+
+      let taskList = "🗑️ Choose task number to delete:\n";
+      todoList.forEach((task, index) => {
+        taskList += `${index + 1}. ${task}\n`;
+      });
+
+      let deleteIndex = Number(prompt(taskList)) - 1;
+
+      if (deleteIndex >= 0 && deleteIndex < todoList.length) {
+        let removed = todoList.splice(deleteIndex, 1);
+        alert(`❌ Task deleted: "${removed[0]}"`);
+      } else {
+        alert("⚠️ Invalid task number!");
+      }
+      break;
+
+    case "3":
+      if (todoList.length === 0) {
+        alert("📝 No tasks in your list.");
+      } else {
+        let allTasks = "📋 Your Tasks:\n";
+        todoList.forEach((task, index) => {
+          allTasks += `${index + 1}. ${task}\n`;
+        });
+        alert(allTasks);
+      }
+      break;
+
+    case "4":
+      alert("👋 Exiting To-Do List. Goodbye!");
+      break;
+
+    default:
+      alert("⚠️ Invalid choice! Please enter 1 to 4.");
+  }
+
+  if (choice === "4") {
+    break;
   }
 }
+  */
