@@ -1,25 +1,28 @@
-//DOM Manipulation part 1
+// 1. Selecting Elements: getElementById(), getElementByClassName(), getElementByTagName(), querySelector(), querySelectorAll()
+//2. DOM Properties and Methods
+// innerHTML, innerText, textContent
+// value, href, src, style, etc.
+// setAttribute(), getAttribute(), removeAttribute()
 
-//1.Selecting element: getElementById, getElementByClassName, querySelector, querySelectorALl
-// let heading = document.querySelector("h1");
-// heading.textContent = "My name is Anit Shrestha"
-// heading.innerHTML = "<i>Coding</i>"
-// console.log(heading)
-// heading.hidden = true;
-
-//2. Text/Content Access: getAttribute, setAttribute, removeAttribute
-// let a = document.querySelector("a");
-// a.href = "https://www.google.com"; //add links of google in a tag
+// let h1 = document.getElementsByTagName("h1")[0];
+// h1.textContent = "hello";
 
 // let h2 = document.querySelector("h2");
-// h2.remove(); //removes element of h2
+// h2.innerHTML = "how are you?"
+
+// let myClass = document.getElementsByClassName("hey")[0];
+// myClass.innerText = "hello, class is changed"
+
+// let google = document.querySelector("a");
+// google.href = "https://www.google.com";
 
 
-// 3.
-// let h3 = document.createElement("h3");
-// h3.textContent = "This will come first";
-// document.querySelector("body").prepend(h3);
+// 3. Styling Elements
 
-// let h4 = document.createElement("h4");
-// h4.textContent = "This will come last";
-// document.querySelector("body").append(h4);
+// CSS ma vako class ko style lai select gareko tag ma add garxa
+// let h3 = document.querySelector("h3");
+// h3.classList.add("myStyle");
+
+// Kunai tag ma already class rakheko xa vane tyo class ko property remove garxa
+// let h4 = document.querySelector("h4");
+// h4.classList.remove("myStyle");
