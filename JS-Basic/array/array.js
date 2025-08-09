@@ -49,7 +49,7 @@
 // arr.sort();
 // arr.sort((a, b) => a - b); // ascending[1, 2, 3]
 // arr.sort((a, b) => a + b); // descending[3, 2, 1]
-// console.log(arr); 
+// console.log(arr);
 
 //12. map()
 // const numbers = [1,2,3,4,5]
@@ -62,14 +62,12 @@
 // const check = num.filter(val => val === 2);
 // console.log(check); // [2]
 
-
-
 //Mastering the most important array methods
 
 // 1.map()
 
 // array.map((item, index, array) => {
-    //return the transformed value
+//return the transformed value
 // })
 // item -> current element
 // index -> position of the element
@@ -154,7 +152,6 @@
 //   // return updated accumulator
 // }, initialValue);
 
-
 // example: sum of numbers
 // const numbers = [2,3,5];
 
@@ -163,7 +160,6 @@
 // }, 0);
 
 // console.log(sum); // 10
-
 
 // Use reduce() to count how many times each fruit appears:
 // const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
@@ -175,3 +171,59 @@
 
 // console.log(count);
 // // Output: { apple: 3, banana: 2, orange: 1 }
+
+//Spread Operator (...)
+// The spread operator takes an iterable (like an array or object) and 
+// expands it into individual elements.
+// Used to copy, merge, or expand arrays/objects.
+
+// syntax
+// ...iterable
+
+// example
+// copy an array
+// const arr1 = [1,2,3]
+// const arr2 = [...arr1]
+// console.log(arr2) //[1,2,3]
+
+// merge array
+// const arr1 = [1,2,3]
+// const arr2 =[4,5,6]
+// const merged = [...arr1, ...arr2];
+// console.log(merged) //[ 1, 2, 3, 4, 5, 6 ]
+
+// Copy objects
+// const obj1 = { a: 1, b: 2 };
+// const obj2 = { ...obj1, c: 3 };
+// console.log(obj2); // { a: 1, b: 2, c: 3 }
+
+// Expand array elements as function arguments:
+// const nums = [1, 2, 3];
+// console.log(Math.max(...nums)); // 3
+
+// Rest Operator(...)
+
+// The rest operator collects multiple elements and
+// packs them into a single array or object.
+// Used in function parameters and destructuring
+// to gather remaining elements.
+
+// syntax:
+// ...variableName
+
+// Function with variable arguments:
+
+// function sum(...numbers) {
+//   return numbers.reduce((a, b) => a + b, 0);
+// }
+// console.log(sum(1, 2, 3)); // 6
+
+// Destructuring arrays (collect the rest):
+// const [first, ...rest] = [10, 20, 30, 40];
+// console.log(first); // 10
+// console.log(rest);  // [20, 30, 40]
+
+// Destructuring objects:
+// const { a, ...others } = { a: 1, b: 2, c: 3 };
+// console.log(a);      // 1
+// console.log(others); // { b: 2, c: 3 }
