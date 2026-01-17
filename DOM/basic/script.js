@@ -16,7 +16,6 @@
 // let google = document.querySelector("a");
 // google.href = "https://www.google.com";
 
-
 // 3. Styling Elements
 
 // CSS ma vako class ko style lai select gareko tag ma add garxa
@@ -26,3 +25,10 @@
 // Kunai tag ma already class rakheko xa vane tyo class ko property remove garxa
 // let h4 = document.querySelector("h4");
 // h4.classList.remove("myStyle");
+
+//Dynamic DOM Manipulation
+
+let h1 = document.createElement("h1");
+h1.textContent = "This is heading 1st";
+document.querySelector("body").prepend(h1);
+
