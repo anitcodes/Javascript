@@ -4,6 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Handling</title>
+    <!-- <style>
+      /*.parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .container {
+        height: 380px;
+        width: 300px;
+        border-radius: 50px;
+        overflow: hidden;
+      }
+
+      .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+*/
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .large-image img {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .thumbnails {
+        display: flex;
+        gap: 10px;
+      }
+
+      .thumbnails img {
+        width: 100px;
+        height: 60px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: transform 0.2s;
+      }
+
+      .thumbnails img:hover {
+        transform: scale(1.1);
+      }
+    </style> -->
   </head>
   <body>
     <!-- Q.1 <h1>Change the color to RED</h1> -->
@@ -41,12 +94,15 @@
     <!-- Q8. Increase Font Size:
     Make a paragraph and a button.
     When the button is clicked, increase the paragraph’s font size. -->
-    
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, minus.</p>
+    <button>Increase Font Size</button> -->
 
     <!-- Q9. Toggle Visibility:
     Create a paragraph and one button.
     When the button is clicked, hide the paragraph if it’s visible,
     and show it again if it’s hidden. -->
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, minus.</p>
+    <button>Hide</button> -->
 
     <!-- Q10. Switch Image Source:
     Display an image and place a button below it.
@@ -55,6 +111,92 @@
     <!-- Q11. Click Counter:
     Create a number starting at 0 and a button.
     Each time the button is clicked, increase the number by 1 and display it on screen. -->
+    <!-- <button id="btn">Increase</button>
+    <h1 id="count">0</h1> -->
+
+    <!-- Q13. Multiple Event Listeners
+    Create a button.
+    Single click → changes button text to “Clicked!”
+    Double click → changes button text to “Double Clicked!” -->
+    <!-- <button
+      id="btn"
+      style="
+        padding: 10px 12px;
+        font-size: 24px;
+        background-color: black;
+        color: white;
+      "
+    >
+      Click Me!
+    </button> -->
+
+    <!-- Q.15 Toggle Dark Mode
+    Create a button.
+    Clicking the button toggles the background and text color 
+    of the page between dark and light mode. -->
+    <!-- <button id="toogle">Toogle</button> -->
+
+    <!-- Q.16 Change Image on Hover Display an image.
+    When the mouse hovers over it,
+    the image changes to another picture. When the mouse leaves, it changes
+    back. -->
+    <!-- <div class="parent">
+      <div class="container">
+        <img
+          src="https://images.pexels.com/photos/35283120/pexels-photo-35283120.jpeg"
+          alt="girl image"
+        />
+      </div>
+      <div class="container">
+        <img
+          src="https://images.pexels.com/photos/35283120/pexels-photo-35283120.jpeg"
+          alt="girl image"
+        />
+      </div>
+      <div class="container">
+        <img
+          src="https://images.pexels.com/photos/35283120/pexels-photo-35283120.jpeg"
+          alt="girl image"
+        />
+      </div>
+      <div class="container">
+        <img
+          src="https://images.pexels.com/photos/35283120/pexels-photo-35283120.jpeg"
+          alt="girl image"
+        />
+      </div>
+    </div> -->
+
+    <!-- Q.17 Clicking an image shows it in a larger display area above the small images. -->
+    <!-- <div class="gallery"> -->
+    <!-- Large display area -->
+    <!-- <div class="large-image">
+        <img
+          id="display"
+          src="https://images.pexels.com/photos/35283120/pexels-photo-35283120.jpeg"
+          alt="Display Image"
+        />
+      </div> -->
+
+    <!-- Thumbnails -->
+    <!-- <div class="thumbnails">
+        <img
+          class="thumb"
+          src="https://images.pexels.com/photos/35283120/pexels-photo-35283120.jpeg"
+          alt="Thumb 1"
+        />
+        <img
+          class="thumb"
+          src="https://images.pexels.com/photos/16036169/pexels-photo-16036169.jpeg"
+          alt="Thumb 2"
+        />
+        <img
+          class="thumb"
+          src="https://images.pexels.com/photos/16036170/pexels-photo-16036170.jpeg"
+          alt="Thumb 3"
+        />
+      </div>
+    </div> -->
 
     <script src="event.js"></script>
   </body>
