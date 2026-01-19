@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      .container {
+        height: 100%;
+        width: 100%;
+        background-color: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      input {
+        visibility: hidden;
+      }
+
+      #btn {
+        padding: 10px 20px;
+        background-color: rgb(165, 6, 43);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      #btn:hover {
+        background-color: rgb(127, 11, 38);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="file" id="inpfile" />
+      <button id="btn">Upload File</button>
+    </div>
+
+    <script>
+      let inpfile = document.querySelector("#inpfile");
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", function () {
+        inpfile.click();
+      });
+
+      inpfile.addEventListener("change", function (dets) {
+        const file = dets.target.files[0];
+        if (file) {
+          btn.textContent = file.name;
+        }
+      });
+    </script>
+  </body>
+</html>

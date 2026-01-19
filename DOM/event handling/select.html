@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select</title>
+    <style>
+      h1 {
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select your faculty:</h1>
+    <select>
+      <option selected disabled>Choose your faculty</option>
+      <option value="csit">CSIT</option>
+      <option value="bca">BCA</option>
+      <option value="bit">BIT</option>
+      <option value="bhm">BHM</option>
+    </select>
+
+    <script>
+      let h1 = document.querySelector("h1");
+      let select = document.querySelector("select");
+
+      select.addEventListener("change", function (dets) {
+        h1.textContent = `${dets.target.value} Faculty Selected`;
+      });
+    </script>
+  </body>
+</html>
