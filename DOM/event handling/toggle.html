@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toogle</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dark {
+        background-color: #222;
+        color: white;
+      }
+
+      button {
+        padding: 10px 20px;
+        color: white;
+        background-color: rgb(133, 48, 179);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgb(86, 33, 114);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main" style="text-align: center">
+        <h1>ANIT SHRESTHA</h1>
+        <button>Dark Mode</button>
+      </div>
+    </div>
+
+    <script>
+      let cont = document.querySelector(".container");
+      let btn = document.querySelector("button");
+
+      btn.addEventListener("click", function () {
+        cont.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>
